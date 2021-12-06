@@ -1,0 +1,8 @@
+* Introduction
+
+Every system to test has to have a README
+file with
+
+- A small description of the system, molecule, basis set etc...
+- A code block with the script or input file used to generate it.
+
