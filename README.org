@@ -6,7 +6,7 @@ If you are going to add a system, please make sure
 to add *one system per directory* together
 with a README file that includes the following
 information
-- description ::
+- Description ::
   Give a short (or long) description of the system that is presented.
   This includes for instance
     - the name of the system
@@ -14,7 +14,8 @@ information
     - Number of occupied orbitals
     - Number of virtual orbitals
     - which code was used to obtain the main files
-- A code block with the script or input file used to generate it.
+- Code blocks ::
+  A code block with the script or input file used to generate it.
   This code block can be as long as necessary and many code blocks
   can be used.
   Please use either markdown or org to write this README, i.e.
