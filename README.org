@@ -1,8 +1,22 @@
 * Introduction
 
-Every system to test has to have a README
-file with
+This repository contains resources needed for testing =cc4s=.
 
-- A small description of the system, molecule, basis set etc...
+If you are going to add a system, please make sure
+to add *one system per directory* together
+with a README file that includes the following
+information
+- description ::
+  Give a short (or long) description of the system that is presented.
+  This includes for instance
+    - the name of the system
+    - basis set
+    - Number of occupied orbitals
+    - Number of virtual orbitals
+    - which code was used to obtain the main files
 - A code block with the script or input file used to generate it.
-
+  This code block can be as long as necessary and many code blocks
+  can be used.
+  Please use either markdown or org to write this README, i.e.
+  write either =README.md= or =README.org=, as these are widely
+  used and support code block notation.
