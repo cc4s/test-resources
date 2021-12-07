@@ -1,7 +1,19 @@
 * Water molecule in DZ basis
 
-This system contains a molecule calculated with the code
-NWCHEM.
+This system contains a water molecule calculated with the code
+=NWCHEM=.
+
+The files created for the subsequent =CC4S= calculations
+are
+- CoulombVertex ::
+  - =./CoulombVertex.yaml=
+  - =./CoulombVertex.dat=
+  This file was created by cholesky decomposing the
+  coulomb integrals in the presented basis.
+- EigenEnergies ::
+  - =./EigenEnergies.yaml=
+  - =./EigenEnergies.dat=
+
 
 ** NWCHEM input
 :PROPERTIES:
@@ -48,7 +60,9 @@ end
 task mp2 energy
 #+end_example
 
-the relevant entries of the basis file are
+** Basis Set
+
+The relevant entries of the basis file are
 
 #+begin_example
 #  aug-cc-pVDZ  EMSL  Basis Set Exchange Library  3/15/13 10:19 AM
@@ -983,4 +997,3 @@ MA usage statistics:
  Total times  cpu:        3.5s     wall:        3.9s
 #+end_example
 
-** CC4S input
