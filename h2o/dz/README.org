@@ -1,3 +1,11 @@
+| Name         | Value        |
+|--------------+--------------|
+| scf          | Hartree-Fock |
+| scf-orbitals | restricted   |
+| occupied     | 4            |
+| virtual      | 36           |
+| basis        | aug-cc-pvdz  |
+
 * Water molecule in DZ basis
 
 This system contains a water molecule calculated with the code
@@ -13,6 +21,7 @@ are
 - EigenEnergies ::
   - =./EigenEnergies.yaml=
   - =./EigenEnergies.dat=
+
 
 
 ** NWCHEM input
