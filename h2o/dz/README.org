@@ -38,16 +38,6 @@ O          0.0000000000        0.0000000000       -0.0661495700
 H          0.0000000000       -0.7581329363        0.5250081505
 H          0.0000000000        0.7581329363        0.5250081505
 end
-bq
- -6.0   -5.0    -8.0  -0.05
- -6.0   -5.0     8.0  -0.05
- -6.0    5.0    -8.0   0.05
- -6.0    5.0     8.0   0.05
-  6.0   -5.0    -8.0   0.05
-  6.0   -5.0     8.0   0.05
-  6.0    5.0    -8.0  -0.05
-  6.0    5.0     8.0  -0.05
-end
 basis spherical
 O library aug-cc-pvdz file /home/fs71337/airmler/util/nwchembasis/aug-cc-pvdz 
 H library aug-cc-pvdz file /home/fs71337/airmler/util/nwchembasis/aug-cc-pvdz 
@@ -300,21 +290,6 @@ The output from NWCHEM is the following:
                             number of included internuclear angles:          1
  ==============================================================================
 
-
-
-                   Bq Structure Information (Angstroms)
-                   ------------------------------------
- Name: default                                                                 
- Number of centers:                     8
-    1  Bq        -6.00000000    -5.00000000    -8.00000000   charge       -0.05000000
-    2  Bq        -6.00000000    -5.00000000     8.00000000   charge       -0.05000000
-    3  Bq        -6.00000000     5.00000000    -8.00000000   charge        0.05000000
-    4  Bq        -6.00000000     5.00000000     8.00000000   charge        0.05000000
-    5  Bq         6.00000000    -5.00000000    -8.00000000   charge        0.05000000
-    6  Bq         6.00000000    -5.00000000     8.00000000   charge        0.05000000
-    7  Bq         6.00000000     5.00000000    -8.00000000   charge       -0.05000000
-    8  Bq         6.00000000     5.00000000     8.00000000   charge       -0.05000000
- Total Bq charge:    0.0000000000000000     
 
 
   warning:::::::::::::: from_compile
