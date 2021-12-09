@@ -1,0 +1,17 @@
+version: v1.0
+scalarType: complex64
+indices:
+  momentum:
+    type: halfGrid
+  orbital:
+    type: spatial
+dimensions:
+  - length:     1890
+    type: momentum
+  - length:     52
+    type: orbital
+  - length:     52
+    type: orbital
+data: CoulombVertex.dat
+binary: 1
+unit: 1
