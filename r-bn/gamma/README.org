@@ -17,7 +17,7 @@ The following files for the =CC4S= calculations are provided.
   - =./CoulombVertex.yaml=
   - =./CoulombVertex.dat=
   These files were obtained using a singular value decomposition of the
-  Coulomb Vertex in a plane-wave basis. See [[https://doi.org/10.1063/1.4977994]][Low rank factorization of the Coulomb integrals for periodic coupled cluster theory]
+  Coulomb Vertex in a plane-wave basis. See [[https://doi.org/10.1063/1.4977994][Low rank factorization of the Coulomb integrals for periodic coupled cluster theory]]
   for a detailed description.
 - EigenEnergies ::
   - =./EigenEnergies.yaml=
