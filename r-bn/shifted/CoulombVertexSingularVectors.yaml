@@ -1,0 +1,15 @@
+version: v1.0
+binary: 1
+scalarType: complex64
+indices:
+  momentum:
+    type: fullGrid
+  singularVector:
+    type: fullGrid
+dimensions:
+  - length:    819
+    type: momentum
+  - length:    641
+    type: singularVector
+data: CoulombVertexSingularVectors.dat    # path to raw data
+unit: 1.0       # )
