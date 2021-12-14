@@ -109,7 +109,7 @@ $VASP
 cp OUTCAR OUTCAR.HF
 
 
-nb=`awk <OUTCAR "/maximum number of plane-waves:/ { print \\$5*2-1 }"`
+nb=`awk <OUTCAR "/maximum number of plane-waves:/ { print \\$5 }"`
 echo "++++++++++++++++++++++++++++++"
 echo "For the given plane-wave basis energy cut-off, there will be a total of " $nb " bands/orbitals."
 echo "++++++++++++++++++++++++++++++"
@@ -225,7 +225,7 @@ EDIFF = 1E-5
 LHFCALC=.TRUE.
 AEXX=1.0
 ISYM=-1
-ALGO=CC4S #CC4S in future
+ALGO=CC4S
 NBANDS = $nbno
 NBANDSHIGH = $nbno
 ENCUTGW=$egw
