@@ -6,7 +6,7 @@
 #
 ##########################################################
 #
-# * Define path to VASP gamma-only binary:
+# * Define path to VASP complex binary:
 #
 VASP="./vasp_std"
 #

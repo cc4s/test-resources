@@ -6,7 +6,7 @@
 | virtual      | 80           |
 | basis        | Plane-wave   |
 
-* r-BN solid in a natural orbital basis using a shift k-point
+* r-BN solid in a natural orbital basis using a shifted k-point
 
 This system corresponds to a periodic supercell of rhombohedral boron nitride (r-BN)
 computed with =VASP=.
