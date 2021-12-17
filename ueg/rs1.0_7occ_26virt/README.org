@@ -1,0 +1,31 @@
+| Name         | Value        |
+|--------------+--------------|
+| scf          | Hartree-Fock |
+| scf-orbitals | restricted   |
+| occupied     | 7            |
+| virtual      | 26           |
+| basis        | Plane-wave   |
+
+* ueg (uniform electron gas) model system for the density rs=1.0
+  A simple cubic box is evalauted with a volume of 58.6430628670.
+  The energy of the highest occupied orbital is 0.3111615073
+  The energy of the lowest unoccupied orbital is 2.3232452653
+  The total HF energy is 8.4914806035
+  The zero momentum integral is given with the madelung constant,
+  which is 0.7302966760 for the given volume.
+  [[https://aip.scitation.org/doi/10.1063/1.4867783][Coupled cluster channels in the homogeneous electron gas]]
+  Atomic units are used throughout.
+
+The provided files have been created with the scripts uegVertex,
+which is provided in the directory.
+
+
+The following files for the =CC4S= calculations are provided.
+- CoulombVertex ::
+  - =./CoulombVertex.yaml=
+  - =./CoulombVertex.dat=
+
+- EigenEnergies ::
+  - =./EigenEnergies.yaml=
+  - =./EigenEnergies.dat=
+
