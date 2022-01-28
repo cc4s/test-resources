@@ -1,17 +1,15 @@
-version: v1.0
-scalarType: complex64
-indices:
-  momentum:
-    type: fullGrid
-  orbital:
-    type: spatial
+version: 100
+scalarType: Complex64
+type: Tensor
 dimensions:
   - length:     257
-    type: momentum
+    type: AuxiliaryField
   - length:     33
-    type: orbital
+    type: State
   - length:     33
-    type: orbital
-data: CoulombVertex.dat
-binary: 1
+    type: State
+elements:
+  type: IeeBinaryFile
+metaData:
+  halfGrid: 0
 unit: 1
