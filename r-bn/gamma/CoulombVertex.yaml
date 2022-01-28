@@ -1,0 +1,15 @@
+version: 100
+type: Tensor
+scalarType: Complex64
+dimensions:
+- length:    356
+  type: AuxiliaryField
+- length:     96
+  type: State
+- length:     96
+  type: State
+elements:
+  type: IeeBinaryFile
+unit: 0.1917011272153577       # = sqrt(Eh/eV)
+metaData:
+  halfGrid: 1

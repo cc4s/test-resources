@@ -1,0 +1,15 @@
+version: 100
+type: Tensor
+scalarType: Real64
+dimensions:
+  - length:     80
+    type: State
+  - length:     80
+    type: State
+  - length:     16
+    type: State
+  - length:     16
+    type: State
+elements:
+  type: IeeBinaryFile
+unit: 0.1481847434769  # = (Angstrom^3/Bohr^3)

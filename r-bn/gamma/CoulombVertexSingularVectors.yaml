@@ -1,0 +1,11 @@
+version: 100
+type: Tensor
+scalarType: Complex64
+dimensions:
+  - length:    819
+    type: Momentum
+  - length:    356
+    type: AuxiliaryField
+elements:
+  type: IeeBinaryFile
+unit: 1.0       #
