@@ -15,41 +15,47 @@ The =CC4S= input files have been created using the  =./run_vasp.sh= script provi
 The following files for the =CC4S= calculations are provided.
 - CoulombVertex ::
   - =./CoulombVertex.yaml=
-  - =./CoulombVertex.dat=
+  - =./CoulombVertex.elements=
   These files were obtained using a singular value decomposition of the
   Coulomb Vertex in a plane-wave basis. See [[https://doi.org/10.1063/1.4977994][Low rank factorization of the Coulomb integrals for periodic coupled cluster theory]]
   for a detailed description.
 - EigenEnergies ::
   - =./EigenEnergies.yaml=
-  - =./EigenEnergies.dat=
+  - =./EigenEnergies.elements=
+- State ::
+  - =./State.yaml=
+- Momentum ::
+  - =./Momentum.yaml=
+- AuxiliaryField ::
+  - =AuxiliaryField.yaml=
 
 To compute the finite-size correction for the CCSD correlation energies based on the
 electronic transition structure factor interpolation approach, outlined in
 [[https://doi.org/10.1103/PhysRevX.8.021043][Applying the Coupled-Cluster Ansatz to Solids and Surfaces in the Thermodynamic Limit]], the following files are needed.
 - CoulombVertexSingularVectors ::
   - =./CoulombVertexSingularVectors.yaml=
-  - =./CoulombVertexSingularVectors.dat=
+  - =./CoulombVertexSingularVectors.elements=
   This file contains the transformation matrix from the auxiliary field to the plane-wave basis.
 - GridVectors ::
   - =./GridVectors.yaml=
-  - =./GridVectors.dat=
+  - =./GridVectors.elements=
   This file contains information about the plane-wave basis vectors.
 - CoulombPotential ::
   - =./CoulombPotential.yaml=
-  - =./CoulombPotential.dat=
+  - =./CoulombPotential.elements=
   This file contains the Coulomb potential employed for the calculation of the Coulomb Vertex.
 
 To compute the basis-set incompleteness error correction for the CCSD correlation energy
 based on the focal-point approach outlined in [[https://aip.scitation.org/doi/full/10.1063/5.0050054][Focal-point approach with pair-specific cusp correction for coupled-cluster theory]],
 the following files are needed.
 - DeltaIntegrals(ij) ::
-  - =DeltaIntegralsHH.dat=
   - =DeltaIntegralsHH.yaml=
+  - =DeltaIntegralsHH.elements=
 - DeltaIntegrals(abij) ::
-  - =DeltaIntegralsPPHH.dat=
   - =DeltaIntegralsPPHH.yaml=
+  - =DeltaIntegralsPPHH.elements=
 - Mp2PairEnergies ::
-  - =Mp2PairEnergies.dat=
   - =Mp2PairEnergies.yaml=
+  - =Mp2PairEnergies.elements=
   This file contains the MP2 electron-pair correlation energies extrapolated to the
   complete basis set limit.
