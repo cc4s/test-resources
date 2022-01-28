@@ -15,12 +15,18 @@ The files created from =NWCHEM= for the subsequent =CC4S= calculations
 are
 - CoulombVertex ::
   - =./CoulombVertex.yaml=
-  - =./CoulombVertex.dat=
+  - =./CoulombVertex.elements=
   This file was created by cholesky decomposing the
   coulomb integrals in the presented basis.
 - EigenEnergies ::
   - =./EigenEnergies.yaml=
-  - =./EigenEnergies.dat=
+  - =./EigenEnergies.elements=
+- State ::
+  - =./State.yaml=
+- AuxiliaryField ::
+  - =AuxiliaryField.yaml=
+
+
 
 Additionally, MP2 natural orbitals have been computed using
 an old version of =CC4S= used in
@@ -28,13 +34,13 @@ an old version of =CC4S= used in
 
 To compute these focal-point corrections, the files
 - DeltaIntegrals(ij) ::
-  - =DeltaIntegralsHH.dat=
+  - =DeltaIntegralsHH.elements=
   - =DeltaIntegralsHH.yaml=
 - DeltaIntegrals(abij) ::
-  - =DeltaIntegralsPPHH.dat=
+  - =DeltaIntegralsPPHH.elements=
   - =DeltaIntegralsPPHH.yaml=
 - Mp2PairEnergies ::
-  - =Mp2PairEnergies.dat=
+  - =Mp2PairEnergies.elements=
   - =Mp2PairEnergies.yaml=
 
 
