@@ -1,13 +1,11 @@
-version: v1.0
-scalarType: complex64
-binary: 1
-indices:
-  orbital:
-    type: spatial
+version: 100
+type: Tensor
+scalarType: Complex64
 dimensions:
   - length:     16
-    type: orbital
+    type: State
   - length:     16
-    type: orbital
-data: DeltaIntegralsHH.dat    # path to raw data
+    type: State
+elements:
+  type: IeeBinaryFile
 unit: 0.1481847434769  # = (Angstrom^3/Bohr^3)

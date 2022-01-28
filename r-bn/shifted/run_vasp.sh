@@ -20,7 +20,7 @@ egw=300
 #
 nbfp=6
 #
-# N.B.: POTCAR file for boron and nitrogen needs to be present in the current directory
+# N.B.: A POTCAR file for boron and nitrogen needs to be present in the current directory
 #
 ##########################################################
 
