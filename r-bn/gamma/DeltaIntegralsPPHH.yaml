@@ -11,5 +11,5 @@ dimensions:
   - length:     16
     type: State
 elements:
-  type: IeeBinaryFile
+  type: IeeeBinaryFile
 unit: 0.1481847434769  # = (Angstrom^3/Bohr^3)

@@ -7,5 +7,5 @@ dimensions:
   - length:    356
     type: AuxiliaryField
 elements:
-  type: IeeBinaryFile
+  type: IeeeBinaryFile
 unit: 1.0       #
