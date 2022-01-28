@@ -15,12 +15,16 @@ The files created for the subsequent =CC4S= calculations
 are
 - CoulombVertex ::
   - =./CoulombVertex.yaml=
-  - =./CoulombVertex.dat=
+  - =./CoulombVertex.elements=
   This file was created by cholesky decomposing the
   coulomb integrals in the presented basis.
 - EigenEnergies ::
   - =./EigenEnergies.yaml=
-  - =./EigenEnergies.dat=
+  - =./EigenEnergies.elements=
+- State ::
+  - =./State.yaml=
+- AuxiliaryField ::
+  - =AuxiliaryField.yaml=
 
 
 
