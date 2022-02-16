@@ -1,0 +1,2 @@
+check-readme:
+  script: "./tools/check-readme.sh"
