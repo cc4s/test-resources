@@ -99,4 +99,24 @@ F    P
 end
 #+end_example
 
+* Reference
+
+The reference data for this system can be found under
+https://doi.org/10.1063/1.481769
+at Table I.
+HF reference is published in:
+https://doi.org/10.1063/1.469993
+
+Reference:
+HF:       -100.021971
+fci:      -100.160300
+fci-corr:   -0.138329
+ccsd:       -0.136695
+(t):        -0.001309
+cr(t):      -0.001134
+
+
+The HF SCF energy in nwchem is:
+-100.0219707168
+
 
