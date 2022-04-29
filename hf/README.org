@@ -1,0 +1,102 @@
+| Name         | Value        |
+|--------------+--------------|
+| scf          | Hartree-Fock |
+| scf-orbitals | restricted   |
+| occupied     | 5            |
+| virtual      | 7            |
+| basis        | dz(dunning)  |
+
+* HF molecule in DZ basis
+
+This system contains a water molecule calculated with the code
+=NWCHEM=.
+
+The files created for the subsequent =CC4S= calculations
+are
+- CoulombVertex ::
+  - =./CoulombVertex.yaml=
+  - =./CoulombVertex.elements=
+  This file was created by cholesky decomposing the
+  Coulomb integrals in the presented basis.
+- EigenEnergies ::
+  - =./EigenEnergies.yaml=
+  - =./EigenEnergies.elements=
+
+
+
+** NWCHEM input
+:PROPERTIES:
+:CUSTOM_ID: nwchem-input
+:END:
+
+#+name: nwchem-input-file
+#+begin_example
+title "HF"
+geometry units angstroms noautoz
+symmetry C1
+H 0.0 0.0 0.0
+F 0.0 0.0 0.9169582670447518
+end
+basis cartesian
+F library dz file /home/fs71337/airmler/util/nwchembasis/dz_dunning
+H library dz file /home/fs71337/airmler/util/nwchembasis/dz_dunning
+end
+start
+memory 8000 mb
+charge 0
+set lindep:tol 1.0D-8
+scf
+  thresh 1e-9
+  direct
+  maxiter 1000
+  tol2e 1e-12
+  vectors output movecs.dz
+end
+task mp2 energy
+
+#+end_example
+
+** Basis Set
+
+The relevant entries of the basis file are
+
+#+begin_example
+# T.H. DUNNING, JR., J. CHEM. PHYS. 53, 2823 (1970). 
+#  T.H. DUNNING, JR. AND P.J. HAY, IN METHODS OF ELECTRONIC STRUCTURE THEORY, 
+#  VOL. 2, H.F. SCHAEFER III, ED., PLENUM PRESS (1977).
+#   
+
+
+basis "H_DZ" CARTESIAN
+H    S
+     19.2406000              0.0328280
+      2.8992000              0.2312080
+      0.6534000              0.8172380
+H    S
+      0.1776000              1.0000000
+end
+basis "F_DZ" CARTESIAN
+F    S
+   9994.7900000              0.0020170
+   1506.0300000              0.0152950
+    350.2690000              0.0731100
+    104.0530000              0.2464200
+     34.8432000              0.6125930
+      4.3688000              0.2424890
+F    S
+     12.2164000              1.0000000
+F    S
+      1.2078000              1.0000000
+F    S
+      0.3634000              1.0000000
+F    P
+     44.3555000              0.0208680
+     10.0820000              0.1300920
+      2.9959000              0.3962190
+      0.9383000              0.6203680
+F    P
+      0.2733000              1.0000000
+end
+#+end_example
+
+
