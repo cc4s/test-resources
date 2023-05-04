@@ -108,12 +108,15 @@ HF reference is published in:
 https://doi.org/10.1063/1.469993
 
 Reference:
-HF:       -100.021971
-fci:      -100.160300
-fci-corr:   -0.138329
-ccsd:       -0.136695
-(t):        -0.001309
-cr(t):      -0.001134
+
+|method     | energy |
+|------+------|
+| HF:       |-100.021971|
+| fci:      |-100.160300|
+| fci-corr: |  -0.138329|
+| ccsd:     |  -0.136695|
+| (t):      |  -0.001309|
+| cr(t):    |  -0.001134|
 
 
 The HF SCF energy in nwchem is:
