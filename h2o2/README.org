@@ -1,0 +1,29 @@
+| Name         | Value        |
+|--------------+--------------|
+| scf          | Hartree-Fock |
+| scf-orbitals | restricted   |
+| occupied     | 7            |
+| virtual      | 55           |
+| basis        | aug-cc-pvdz  |
+
+* H2O2 calculated with MRCC
+
+The cc4s input files are obtained by using a MRCC using a de-facto unmodified
+version (as released march 2022).  The input file (MINP) can be seen in the
+stdout (mrcc.stdout).
+
+In addition, the standard output  of an FNO calculation using 4 frozen natural
+orbitals (FNOs) per occupied orbital is provided.  (mrcc.fno.out). Note: This
+calculation was performed using a local version of MRCC, with only minor
+modifications made to allow setting the number of FNOs per occupied orbital (as
+MRCC natively permits only selection via occupation numbers).
+
+
+The following files for the =CC4S= calculations are provided.
+- FOCK
+- MOCOEF
+- TEDAT
+- TEINT
+- mrcc.stdout 
+
+
