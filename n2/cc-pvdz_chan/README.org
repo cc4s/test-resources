@@ -2,18 +2,19 @@
 |--------------+--------------|
 | scf          | Hartree-Fock |
 | scf-orbitals | restricted   |
-| occupied     | 4            |
-| virtual      | 19           |
+| occupied     | 5            |
+| virtual      | 21           |
 | basis        | cc-pvdz      |
 
-* Water molecule in cc-pvdz basis
+* N2 molecule in cc-pvdz basis from DMRG study of Chan et al.
 
-This system contains a water molecule calculated with the code
+This system contains a N2 molecule calculated with the code
 =NWCHEM= using Gaussian-type orbitals. Input and Output files
-can be found in the present directory: in.nw and mp2.out.
-Same system is calculated
-using the =CFOUR= program package for comparison - standard output
-can be found in the file cfour.out.
+can be found in the present directory: input.nw and mp2.out.
+
+Results are compared with values from Chan et al.
+(10.1063/1.1783212) as well as with Rishi and Valeev 
+(10.1063/1.5097150)
 
 
 The files created for the subsequent =CC4S= calculations
@@ -45,19 +46,14 @@ are
 
 Reference:
 
-|method     | cfour | nwchem | cc4s | diff |
-|------+------+-------+------+-------|
-| HF:       | -76.026804758 | -76.026804758 |      -        |
-| MP2:      |  -0.201645175 |  -0.201645175 | -0.201645181  | 6.0e-9
-| ccsd:     |  -0.211208539 |      -        | -0.2112085463 | 7.3e-9
-| λ:        |  -0.208160920 |      -        | -0.2081609267 | 6.7e-9
-| (T-2)     |  -0.002793984 |      -        | -0.0027939849 | 0.9e-9
-| (T-3)     |  -0.003043984 |      -        | -0.0030439854 | 1.4e-9
-| (T-4)     |  -0.003167069 |      -        | -0.0031670706 | 1.6e-9
-
-
-λ is the pseudo energy (without singles contribution) as it
-is provided in the stdout of =CFOUR=.
+|method     | rishi    | nwchem  |  cc4s   | chan |
+|-----------+----------+---------+---------+-------|
+| HF:       |   -      | -108.9493779 | -  | -108.949378
+| ccsd:     |   -      |   - | -0.31449296 |   -0.314493 
+| dcsd:     | -0.32759 |   - | -0.32759118 |     -   
+| ccsdt:    |   -      |   - | -0.32712184 |   -0.327122
+| dcsdt:    | -0.32776 |   - | -0.32776008 |     -
+| 3cc:      | -0.32853 |   - | -0.32853300 |     -
 
 
 

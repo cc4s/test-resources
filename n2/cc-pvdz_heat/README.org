@@ -1,0 +1,71 @@
+| Name         | Value        |
+|--------------+--------------|
+| scf          | Hartree-Fock |
+| scf-orbitals | restricted   |
+| occupied     | 5            |
+| virtual      | 21           |
+| basis        | cc-pvdz      |
+
+* N2 molecule in cc-pvdz basis from the HEAT benchmark set
+
+This system contains a N2 molecule calculated with the code
+=NWCHEM= using Gaussian-type orbitals. Input and Output files
+can be found in the present directory: input.nw and mp2.out.
+For the same system CCSDT-1b and CCSDT-3 results are calculated
+using the =CFOUR= program package for comparison - standard output
+can be found in the files ccsdt-1b.out and ccsdt-3.out.
+
+Furthermore, the energies can be compared with results from
+Rishi and Valeev (https://doi.org/10.1063/1.5097150)
+
+
+The files created for the subsequent =CC4S= calculations
+are
+- CoulombIntegrals ::
+  - =./CoulombIntegrals.components.hhhh.elements=
+  - =./CoulombIntegrals.components.hhhp.elements=
+  - =./CoulombIntegrals.components.hhph.elements=
+  - =./CoulombIntegrals.components.hhpp.elements=
+  - =./CoulombIntegrals.components.hphh.elements=
+  - =./CoulombIntegrals.components.hphp.elements=
+  - =./CoulombIntegrals.components.hpph.elements=
+  - =./CoulombIntegrals.components.hppp.elements=
+  - =./CoulombIntegrals.components.phhh.elements=
+  - =./CoulombIntegrals.components.phhp.elements=
+  - =./CoulombIntegrals.components.phph.elements=
+  - =./CoulombIntegrals.components.phpp.elements=
+  - =./CoulombIntegrals.components.pphh.elements=
+  - =./CoulombIntegrals.components.pphp.elements=
+  - =./CoulombIntegrals.components.ppph.elements=
+  - =./CoulombIntegrals.components.pppp.elements=
+  - =./CoulombIntegrals.yaml=
+
+
+- EigenEnergies ::
+  - =./EigenEnergies.yaml=
+  - =./EigenEnergies.elements=
+
+
+Reference:
+
+|method     | rishi   | nwchem | cc4s | cfour | diff
+|-----------+----------+--------+------+-------+------|
+| HF:       |   -      | -108.954074084 |  -   | -108.954074042 | 4.2e-8 |
+| ccsdt:    | -0.321295916 |  - | -0.321300163 |     -          | 4.2e-6
+| dcsdt:    | -0.321875916 |  - | -0.321876376 |     -          | 4.6e-7
+| 3cc:      | -0.322585916 | -  | -0.322589069 |     -          | 3.2e-6
+| ccsdt-1b: |     -    |   -    | -0.321737020 | -0.3217370820  | 6.2e-8
+| ccsdt-3:  |     -    |   -    | -0.320390119 | -0.3203901789  | 6.0e-8
+
+
+Correlation energies for ccsdt, dcsdt, and 3cc are not provided by Rishi and Valeev.
+Hence, the provided numbers are obtained by taking their total energies and substracting
+the MP2 result fromn wchem.
+
+
+Note:
+The larger discrepancies in Rishi's values arise because their energies are
+reported with only five digits after the decimal point.
+
+The agreement between =CC4s= and =CFOUR= for CCSDT is again better than 6e-8.
+CCSDT@CFOUR: -0.321300223
