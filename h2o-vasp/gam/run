@@ -1,0 +1,104 @@
+#!/bin/sh
+
+flavour=vasp_gam
+VASP="mpirun -np 48 $flavour"
+VASPgto="$flavour"
+
+enc=500
+
+cat >KPOINTS <<!
+Automatically generated mesh
+       0
+Gamma
+1 1 1
+ 0 0 0
+!
+
+rm WAVECAR
+
+cat >INCAR <<!
+ENCUT = $enc
+SIGMA = 0.0001
+EDIFF = 1E-4
+NELM=100000
+NCORE=2
+!
+cat INCAR
+$VASP
+cp OUTCAR OUTCAR.DFT
+
+cat >INCAR <<!
+ENCUT = $enc
+EDIFF = 1E-6
+ALGO=C
+LHFCALC=.TRUE.
+AEXX=1.0
+NELM=100000
+SIGMA = 0.0001
+PREC=A
+NCORE=2
+!
+cat INCAR
+$VASP
+cp OUTCAR OUTCAR.HF
+
+#####################
+# Create GTO basis
+#####################
+
+# (1*1)*2+(2*1+1*3)*1 = 7
+
+nocc=$(grep NELECT OUTCAR | awk '{ print $3/2; }')
+nb=$(python3 -c "print(7+$nocc)")
+
+cat >INCAR <<!
+ENCUT = $enc
+LPEAD=.TRUE.
+ALGO=DMET
+NELM=1
+SIGMA=0.001
+LHFCALC=.TRUE.
+AEXX=1.0
+NBANDS=$nb
+LAPPEND=.TRUE.
+!
+cat INCAR
+$VASPgto
+cp OUTCAR OUTCAR.GTO
+
+#copy GTO basis to WAVECAR
+cp WAVECAR.GTO WAVECAR
+
+cat >INCAR <<!
+NBANDS=$nb
+NBANDSHIGH=$nb
+ENCUT = $enc
+ALGO=sub
+LHFCALC=.TRUE.
+AEXX=1.0
+NELM=1
+SIGMA = 0.0001
+PREC=A
+EDIFF = 1E-5
+LOPTICS=.TRUE.
+NCORE=2
+!
+cat INCAR
+$VASP
+cp OUTCAR OUTCAR.HF-diag
+
+cat >INCAR <<!
+NBANDS=$nb
+NBANDSHIGH=$nb
+ENCUT = $enc
+ALGO=CC4S
+LMAXFOCKAE=4
+LHFCALC=.TRUE.
+AEXX=1.0
+SIGMA = 0.0001
+EDIFF = 1E-4
+PREC=A
+!
+cat INCAR
+$VASP
+cp OUTCAR OUTCAR.CC4S
