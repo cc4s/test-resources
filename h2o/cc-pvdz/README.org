@@ -1,0 +1,63 @@
+| Name         | Value        |
+|--------------+--------------|
+| scf          | Hartree-Fock |
+| scf-orbitals | restricted   |
+| occupied     | 4            |
+| virtual      | 19           |
+| basis        | cc-pvdz      |
+
+* Water molecule in cc-pvdz basis
+
+This system contains a water molecule calculated with the code
+=NWCHEM= using Gaussian-type orbitals. Input and Output files
+can be found in the present directory: in.nw and mp2.out.
+Same system is calculated
+using the =CFOUR= program package for comparison - standard output
+can be found in the file cfour.out.
+
+
+The files created for the subsequent =CC4S= calculations
+are
+- CoulombIntegrals ::
+  - =./CoulombIntegrals.components.hhhh.elements=
+  - =./CoulombIntegrals.components.hhhp.elements=
+  - =./CoulombIntegrals.components.hhph.elements=
+  - =./CoulombIntegrals.components.hhpp.elements=
+  - =./CoulombIntegrals.components.hphh.elements=
+  - =./CoulombIntegrals.components.hphp.elements=
+  - =./CoulombIntegrals.components.hpph.elements=
+  - =./CoulombIntegrals.components.hppp.elements=
+  - =./CoulombIntegrals.components.phhh.elements=
+  - =./CoulombIntegrals.components.phhp.elements=
+  - =./CoulombIntegrals.components.phph.elements=
+  - =./CoulombIntegrals.components.phpp.elements=
+  - =./CoulombIntegrals.components.pphh.elements=
+  - =./CoulombIntegrals.components.pphp.elements=
+  - =./CoulombIntegrals.components.ppph.elements=
+  - =./CoulombIntegrals.components.pppp.elements=
+  - =./CoulombIntegrals.yaml=
+
+
+- EigenEnergies ::
+  - =./EigenEnergies.yaml=
+  - =./EigenEnergies.elements=
+
+
+Reference:
+
+|method     | cfour | nwchem | cc4s | diff |
+|------+------+-------+------+-------|
+| HF:       | -76.026804758 | -76.026804758 |      -        |
+| MP2:      |  -0.201645175 |  -0.201645175 | -0.201645181  | 6.0e-9
+| ccsd:     |  -0.211208539 |      -        | -0.2112085463 | 7.3e-9
+| λ:        |  -0.208160920 |      -        | -0.2081609267 | 6.7e-9
+| (T-2)     |  -0.002793984 |      -        | -0.0027939849 | 0.9e-9
+| (T-3)     |  -0.003043984 |      -        | -0.0030439854 | 1.4e-9
+| (T-4)     |  -0.003167069 |      -        | -0.0031670706 | 1.6e-9
+
+
+λ is the pseudo energy (without singles contribution) as it
+is provided in the stdout of =CFOUR=.
+
+
+

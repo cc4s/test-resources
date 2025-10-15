@@ -1,0 +1,24 @@
+title "HF"
+geometry units bohr noautoz
+symmetry C1
+N          0.0000000000        0.0000000000        0.00000
+N          0.0000000000        0.0000000000        2.118
+end
+basis spherical
+N library cc-pvdz
+end
+start
+memory 8000 mb
+charge 0
+set lindep:tol 1.0D-8
+scf
+  thresh 1e-9
+  direct
+  maxiter 1000
+  tol2e 1e-12
+  vectors output movecs.dz 
+end
+mp2
+  freeze atomic
+end
+task mp2 energy

@@ -1,3 +1,7 @@
+Note: the content of this directory will be removed. We will use two
+Coulomb Vertex from vasp instead, with real and complex integrals.
+However, the system will be the same
+
 | Name         | Value        |
 |--------------+--------------|
 | scf          | Hartree-Fock |

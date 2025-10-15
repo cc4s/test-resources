@@ -1,0 +1,59 @@
+| Name         | Value        |
+|--------------+--------------|
+| scf          | Hartree-Fock |
+| scf-orbitals | restricted   |
+| occupied     | 5            |
+| virtual      | 21           |
+| basis        | cc-pvdz      |
+
+* N2 molecule in cc-pvdz basis from DMRG study of Chan et al.
+
+This system contains a N2 molecule calculated with the code
+=NWCHEM= using Gaussian-type orbitals. Input and Output files
+can be found in the present directory: input.nw and mp2.out.
+
+Results are compared with values from Chan et al.
+(10.1063/1.1783212) as well as with Rishi and Valeev 
+(10.1063/1.5097150)
+
+
+The files created for the subsequent =CC4S= calculations
+are
+- CoulombIntegrals ::
+  - =./CoulombIntegrals.components.hhhh.elements=
+  - =./CoulombIntegrals.components.hhhp.elements=
+  - =./CoulombIntegrals.components.hhph.elements=
+  - =./CoulombIntegrals.components.hhpp.elements=
+  - =./CoulombIntegrals.components.hphh.elements=
+  - =./CoulombIntegrals.components.hphp.elements=
+  - =./CoulombIntegrals.components.hpph.elements=
+  - =./CoulombIntegrals.components.hppp.elements=
+  - =./CoulombIntegrals.components.phhh.elements=
+  - =./CoulombIntegrals.components.phhp.elements=
+  - =./CoulombIntegrals.components.phph.elements=
+  - =./CoulombIntegrals.components.phpp.elements=
+  - =./CoulombIntegrals.components.pphh.elements=
+  - =./CoulombIntegrals.components.pphp.elements=
+  - =./CoulombIntegrals.components.ppph.elements=
+  - =./CoulombIntegrals.components.pppp.elements=
+  - =./CoulombIntegrals.yaml=
+
+
+- EigenEnergies ::
+  - =./EigenEnergies.yaml=
+  - =./EigenEnergies.elements=
+
+
+Reference:
+
+|method     | rishi    | nwchem  |  cc4s   | chan |
+|-----------+----------+---------+---------+-------|
+| HF:       |   -      | -108.9493779 | -  | -108.949378
+| ccsd:     |   -      |   - | -0.31449296 |   -0.314493 
+| dcsd:     | -0.32759 |   - | -0.32759118 |     -   
+| ccsdt:    |   -      |   - | -0.32712184 |   -0.327122
+| dcsdt:    | -0.32776 |   - | -0.32776008 |     -
+| 3cc:      | -0.32853 |   - | -0.32853300 |     -
+
+
+

@@ -1,0 +1,23 @@
+| Name         | Value        |
+|--------------+--------------|
+| scf          | Hartree-Fock |
+| scf-orbitals | restricted   |
+| occupied     | 5            |
+| virtual      | 27           |
+| basis        | Plane-wave   |
+
+* N2 molecule in a small box
+
+This system is just a dummy calculation of a N2 molecule in a small box. The Hartree-Fock
+calculation was performed with =VASP= using complex orbitals.
+
+
+The following files for the =CC4S= calculations are provided.
+- CoulombVertex ::
+  - =./CoulombVertex.yaml=
+  - =./CoulombVertex.elements=
+- EigenEnergies ::
+  - =./EigenEnergies.yaml=
+  - =./EigenEnergies.elements=
+
+

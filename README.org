@@ -5,7 +5,7 @@ This repository contains resources needed for testing =cc4s=.
 If you are going to add a system, please make sure
 to add *one system per directory* together
 with a README file that includes the following
-information
+information:
 - Description ::
   Give a short (or long) description of the system that is presented.
   This includes for instance
