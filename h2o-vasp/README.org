@@ -1,0 +1,4 @@
+* This test case consists on the H2O Molecule calculated using VASP and Gaussian basis sets
+
+- For a single k-point at Γ using the =vasp_gam=  in [[file:gam/]]
+- For a single k-point at Γ using the =vasp_std= in [[file:std/]]

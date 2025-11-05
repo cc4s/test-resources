@@ -1,0 +1,3 @@
+* Real calculation using =vasp_gam=
+
+You can see how the VASP files were prepared in the [[file:run][run script]].

@@ -21,11 +21,13 @@ ENCUT = $enc
 SIGMA = 0.0001
 EDIFF = 1E-4
 NELM=100000
+ISYM=-1
 NCORE=2
 !
 cat INCAR
 $VASP
 cp OUTCAR OUTCAR.DFT
+
 
 cat >INCAR <<!
 ENCUT = $enc
@@ -36,6 +38,7 @@ AEXX=1.0
 NELM=100000
 SIGMA = 0.0001
 PREC=A
+ISYM=-1
 NCORE=2
 !
 cat INCAR
@@ -48,10 +51,11 @@ cp OUTCAR OUTCAR.HF
 
 # (1*1)*2+(2*1+1*3)*1 = 7
 
-nocc=$(grep NELECT OUTCAR | awk '{ print $3/2; }')
-nb=$(python3 -c "print(7+$nocc)")
+nocc=`grep NELECT OUTCAR | awk '{ print $3/2; }'`
+nb=`python3 -c "print(7+$nocc)"`
 
-cat >INCAR <<!
+
+cat > INCAR <<!
 ENCUT = $enc
 LPEAD=.TRUE.
 ALGO=DMET
@@ -61,6 +65,7 @@ LHFCALC=.TRUE.
 AEXX=1.0
 NBANDS=$nb
 LAPPEND=.TRUE.
+ISYM=-1
 !
 cat INCAR
 $VASPgto
@@ -68,6 +73,7 @@ cp OUTCAR OUTCAR.GTO
 
 #copy GTO basis to WAVECAR
 cp WAVECAR.GTO WAVECAR
+
 
 cat >INCAR <<!
 NBANDS=$nb
@@ -79,6 +85,7 @@ AEXX=1.0
 NELM=1
 SIGMA = 0.0001
 PREC=A
+ISYM=-1
 EDIFF = 1E-5
 LOPTICS=.TRUE.
 NCORE=2
@@ -91,14 +98,33 @@ cat >INCAR <<!
 NBANDS=$nb
 NBANDSHIGH=$nb
 ENCUT = $enc
+ALGO=MP2
+LMAXFOCKAE=4
+LHFCALC=.TRUE.
+AEXX=1.0
+SIGMA = 0.0001
+EDIFF = 1E-9
+PREC=A
+ISYM=-1
+!
+cat INCAR
+$VASP
+cp OUTCAR OUTCAR.MP2
+
+cat >INCAR <<!
+NBANDS=$nb
+NBANDSHIGH=$nb
+ENCUT = $enc
 ALGO=CC4S
 LMAXFOCKAE=4
 LHFCALC=.TRUE.
 AEXX=1.0
 SIGMA = 0.0001
-EDIFF = 1E-4
+EDIFF = 1E-9
 PREC=A
+ISYM=-1
 !
 cat INCAR
 $VASP
 cp OUTCAR OUTCAR.CC4S
+

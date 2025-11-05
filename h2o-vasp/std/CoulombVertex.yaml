@@ -2,7 +2,7 @@ version: 100
 type: Tensor
 scalarType: Complex64
 dimensions:
-- length:     52
+- length:     66
   type: AuxiliaryField
 - length:     11
   type: State

@@ -4,7 +4,7 @@ scalarType: Complex64
 dimensions:
   - length:    895
     type: Momentum
-  - length:     70
+  - length:    162
     type: AuxiliaryField
 elements:
   type: IeeeBinaryFile
